@@ -1,0 +1,6 @@
+data/
+drive/
+__pycache__/
+*.pyc
+*.db
+.secrets/

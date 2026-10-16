@@ -1,0 +1,236 @@
+/* ==================================================================
+   LMS Bien-Être · fork Rosémary — design tokens
+   « sage » : clair apaisant (fond crème-vert, accent vert sauge/teal
+   Teachizy #32C4C0 fondu dans la palette CDB). Fallbacks :
+   « emerald » = nuit émeraude (héritage Helium), « mystic » = améthyste.
+   ================================================================== */
+
+:root, [data-accent="sage"] {
+  --bg: #F5F9F6;
+  --bg-2: #FFFFFF;
+  --bg-3: #EBF3EE;
+  --border: #DCE8DF;
+  --text: #10241D;
+  --text-2: rgba(16, 36, 29, 0.68);
+  --text-3: rgba(16, 36, 29, 0.45);
+  --accent: #0B8C7D;
+  --accent-2: #076A5E;      /* hover */
+  --accent-glow: rgba(11, 140, 125, 0.28);
+  --accent-soft: rgba(11, 140, 125, 0.08);
+  --gold: #B98A2F;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --font: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+[data-accent="emerald"] {
+  --bg: #000000;
+  --bg-2: #0A0A0A;
+  --bg-3: #121212;
+  --border: #1E1E1E;
+  --text: #FFFFFF;
+  --text-2: rgba(255, 255, 255, 0.66);
+  --text-3: rgba(255, 255, 255, 0.42);
+  --accent: #2DE28E;
+  --accent-2: #1FA76A;
+  --accent-glow: rgba(45, 226, 142, 0.35);
+  --accent-soft: rgba(45, 226, 142, 0.10);
+}
+
+[data-accent="mystic"] {
+  --bg: #000000;
+  --bg-2: #0A0A0A;
+  --bg-3: #121212;
+  --border: #1E1E1E;
+  --text: #FFFFFF;
+  --text-2: rgba(255, 255, 255, 0.66);
+  --text-3: rgba(255, 255, 255, 0.42);
+  --accent: #8B5CF6;
+  --accent-2: #7C3AED;
+  --accent-glow: rgba(139, 92, 246, 0.38);
+  --accent-soft: rgba(139, 92, 246, 0.10);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Orbes décoratifs (glow émeraude/améthyste) ---------- */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-accent { background: var(--accent-glow); }
+.orb-violet { background: rgba(139, 92, 246, 0.25); }
+.orb-blue { background: rgba(45, 156, 226, 0.22); }
+.orb-gold { background: rgba(212, 168, 67, 0.20); }
+
+/* ---------- Typographie ---------- */
+h1, h2, h3, h4 { font-weight: 600; line-height: 1.25; letter-spacing: -0.02em; }
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.serif-i { font-style: italic; font-weight: 500; }
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 26px; border-radius: 999px;
+  font-family: var(--font); font-size: 14px; font-weight: 500;
+  cursor: pointer; border: none; text-decoration: none;
+  transition: all 0.2s ease;
+}
+.btn-white { background: var(--text); color: var(--bg); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+.btn-accent { background: var(--accent); color: #FFFFFF; font-weight: 600; }
+[data-accent="emerald"] .btn-accent, [data-accent="mystic"] .btn-accent { color: #032015; }
+.btn-accent:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn-danger { background: transparent; color: #F87171; border: 1px solid rgba(248,113,113,0.4); }
+.btn-danger:hover { background: rgba(248,113,113,0.1); }
+.btn-sm { padding: 8px 16px; font-size: 13px; }
+.btn-lg { padding: 16px 34px; font-size: 15px; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
+
+/* ---------- Nav pill flottante ---------- */
+.nav-pill {
+  position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+  z-index: 100; display: flex; align-items: center; gap: 4px;
+  padding: 8px 10px; border-radius: 999px;
+  background: rgba(10, 10, 10, 0.72);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+.nav-pill a {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--text-2); text-decoration: none;
+  font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 999px;
+  transition: all 0.15s ease;
+}
+.nav-pill a:hover, .nav-pill a.active { color: var(--text); background: rgba(255,255,255,0.07); }
+/* bouton CTA dans la nav pill : le texte noir doit rester noir (spécificité > .nav-pill a) */
+.nav-pill a.btn { color: #000; }
+.nav-pill a.btn:hover { color: #000; background: rgba(255,255,255,0.9); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.card-glow { position: relative; overflow: hidden; }
+.card-glow::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(600px 200px at 20% 0%, var(--accent-soft), transparent);
+  pointer-events: none;
+}
+.card-hover { transition: all 0.25s ease; }
+[data-accent="emerald"] .card-hover:hover, [data-accent="mystic"] .card-hover:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+.card-hover:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(16,36,29,0.10); }
+
+/* ---------- Champs ---------- */
+.input, textarea, select {
+  width: 100%; background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); color: var(--text);
+  font-family: var(--font); font-size: 14px; padding: 12px 16px;
+  transition: border-color 0.15s ease; outline: none;
+}
+.input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+.input::placeholder, textarea::placeholder { color: var(--text-3); }
+.label { font-size: 12px; font-weight: 500; color: var(--text-2); margin-bottom: 6px; display: block; }
+
+/* ---------- Badges & pills ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+  padding: 5px 12px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(45,226,142,0.25);
+}
+[data-accent="mystic"] .badge { border-color: rgba(139,92,246,0.3); }
+.badge-gold { background: rgba(212,168,67,0.12); color: var(--gold); border-color: rgba(212,168,67,0.3); }
+.badge-gray { background: rgba(255,255,255,0.06); color: var(--text-2); border-color: var(--border); }
+
+/* ---------- Progress ---------- */
+.progress-track { height: 7px; background: var(--bg-3); border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 999px; transition: width 0.5s ease; }
+
+/* ---------- Table ---------- */
+.table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table th {
+  text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-3); padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.table td { padding: 12px; border-bottom: 1px solid rgba(30,30,30,0.6); }
+.table tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ---------- Modal ---------- */
+.modal-root { position: fixed; inset: 0; z-index: 300; display: none; }
+.modal-root.open { display: flex; align-items: center; justify-content: center; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(16,36,29,0.42); backdrop-filter: blur(6px); }
+.modal {
+  position: relative; width: min(680px, 92vw); max-height: 88vh; overflow-y: auto;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 20px; padding: 30px; box-shadow: 0 30px 80px rgba(16,36,29,0.25);
+}
+.modal h3 { margin-bottom: 6px; }
+
+/* ---------- Toast ---------- */
+.toast-root { position: fixed; bottom: 24px; right: 24px; z-index: 400; display: flex; flex-direction: column; gap: 10px; }
+.toast {
+  background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+  color: var(--text); border-radius: 12px; padding: 13px 20px; font-size: 14px;
+  box-shadow: 0 16px 40px rgba(16,36,29,0.18); animation: toastIn 0.25s ease;
+}
+.toast.err { border-left-color: #F87171; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Marquee ---------- */
+.marquee { overflow: hidden; white-space: nowrap; padding: 18px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.marquee-inner { display: inline-flex; gap: 70px; animation: marquee 30s linear infinite; }
+.marquee span { font-size: 15px; font-weight: 300; color: var(--text-3); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- Stat géant ---------- */
+.stat-giant { font-size: 56px; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+.stat-giant .unit { font-size: 26px; font-weight: 600; color: var(--accent); }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ---------- Utilities ---------- */
+.muted { color: var(--text-2); }
+.dimmer { color: var(--text-3); }
+.center { text-align: center; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.spacer { flex: 1; }
+.row { display: flex; align-items: center; gap: 12px; }
+.gap-lg { gap: 26px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.mt-1{margin-top:8px}.mt-2{margin-top:14px}.mt-3{margin-top:22px}.mt-4{margin-top:34px}.mt-5{margin-top:50px}
+.mb-1{margin-bottom:8px}.mb-2{margin-bottom:14px}.mb-3{margin-bottom:22px}.mb-4{margin-bottom:34px}
+.hidden { display: none !important; }

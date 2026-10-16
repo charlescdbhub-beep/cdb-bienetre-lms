@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr" data-accent="emerald">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS Bien-Être — Connexion / Inscription</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<style>
+body { min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.orb-a { width: 600px; height: 600px; top: -220px; left: -160px; background: radial-gradient(circle at 35% 35%, rgba(45,226,142,0.4), transparent 70%); }
+.orb-b { width: 400px; height: 400px; bottom: -140px; right: -100px; background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.35), transparent 70%); }
+.card-login {
+  position: relative; z-index: 1; width: min(430px, 92vw);
+  background: var(--bg-2); border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 24px; padding: 40px 36px; box-shadow: 0 40px 120px rgba(0,0,0,0.7);
+}
+.brand { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.brand .mark { width: 42px; height: 42px; border-radius: 13px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; color: #032015; }
+.brand .nm { font-weight: 600; font-size: 17px; }
+.brand .slog { font-size: 12px; color: var(--text-3); }
+h1 { font-size: 24px; margin-bottom: 6px; }
+.sub { color: var(--text-2); font-size: 14px; font-weight: 300; margin-bottom: 28px; }
+.tabs { display: flex; background: var(--bg-3); border-radius: 999px; padding: 4px; margin-bottom: 26px; }
+.tabs a { flex: 1; text-align: center; padding: 9px; border-radius: 999px; font-size: 13.5px; font-weight: 500; color: var(--text-2); text-decoration: none; }
+.tabs a.on { background: rgba(255,255,255,0.08); color: var(--text); }
+form { display: flex; flex-direction: column; gap: 14px; }
+form .btn { width: 100%; margin-top: 10px; }
+.alt { margin-top: 22px; text-align: center; font-size: 13px; color: var(--text-3); }
+.alt a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body data-mode="{{MODE}}">
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <div class="card-login">
+    <div class="brand">
+      <div class="mark">✦</div>
+      <div>
+        <div class="nm">CDB Bien-Être</div>
+        <div class="slog">Espace d'accompagnement</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <a href="/login" class="{{LOGIN_ON}}" id="tab-login">Connexion</a>
+      <a href="/signup" class="{{SIGNUP_ON}}" id="tab-signup">Créer un compte élève</a>
+    </div>
+
+    <h1 id="titre">{{TITRE}}</h1>
+    <p class="sub" id="sous-titre">{{SOUS}}</p>
+
+    <form id="form">
+      <div id="name-block">
+        <span class="label">Ton prénom / nom</span>
+        <input class="input" id="name" placeholder="Marie Dupont" autocomplete="name">
+      </div>
+      <div>
+        <span class="label">Email</span>
+        <input class="input" id="email" type="email" placeholder="toi@email.com" autocomplete="email">
+      </div>
+      <div>
+        <span class="label">Mot de passe</span>
+        <input class="input" id="password" type="password" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <button class="btn btn-accent btn-lg" type="submit" id="submit">{{CTA}}</button>
+    </form>
+
+    <p class="alt">Un code d'accès premium ? <a href="#" onclick="alert('Saisis ton code dans l\\'espace élève après connexion : Mes formations → « Utiliser un code ».')">Comment ça marche</a></p>
+    <p class="alt"><a href="/">← Retour à l'accueil</a></p>
+  </div>
+
+<script src="/static/login.js?v=2.0"></script>
+</body>
+</html>

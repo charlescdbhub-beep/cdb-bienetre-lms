@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr" data-accent="emerald">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS Bien-Être — Ressources d'accompagnement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<style>
+.wrap { position: relative; max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+section { position: relative; padding: 90px 0; }
+.hero { min-height: 92vh; display: flex; align-items: center; overflow: hidden; }
+.hero .orb-1 { width: 560px; height: 560px; top: -160px; right: -120px; background: radial-gradient(circle at 30% 30%, rgba(45,226,142,0.5), rgba(45,226,142,0.08) 60%, transparent); filter: blur(50px); }
+.hero .orb-2 { width: 340px; height: 340px; bottom: -120px; left: -80px; background: radial-gradient(circle at 60% 40%, rgba(139,92,246,0.4), transparent 70%); filter: blur(60px); }
+.hero .orb-3 { width: 180px; height: 180px; top: 30%; left: 12%; opacity: 0.7; background: radial-gradient(circle at 40% 40%, rgba(45,156,226,0.45), transparent 70%); filter: blur(40px); }
+.titre-hero { font-size: clamp(42px, 7vw, 82px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; max-width: 920px; }
+.titre-hero .accent-i { font-style: italic; color: var(--accent); font-weight: 500; }
+.sous-hero { max-width: 580px; margin-top: 26px; color: var(--text-2); font-size: 17px; font-weight: 300; }
+.hero-ctas { display: flex; gap: 14px; margin-top: 38px; flex-wrap: wrap; }
+.hero-trust { margin-top: 46px; display: flex; align-items: center; gap: 16px; color: var(--text-3); font-size: 13px; }
+.trust-avatars { display: flex; }
+.trust-avatars .av { width: 34px; height: 34px; border-radius: 50%; background: var(--bg-3); border: 2px solid #000; margin-left: -10px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--accent); }
+.trust-avatars .av:first-child { margin-left: 0; }
+.sec-head { max-width: 660px; margin-bottom: 54px; }
+.sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.sec-titre { font-size: clamp(30px, 4vw, 46px); font-weight: 600; letter-spacing: -0.02em; }
+.courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.course-card { display: flex; flex-direction: column; overflow: hidden; padding: 0; cursor: pointer; }
+.course-thumb { height: 150px; position: relative; background: linear-gradient(135deg, var(--cc, #2DE28E), transparent 140%); opacity: 0.9; }
+.course-thumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-2), transparent 65%); }
+.course-thumb .num { position: absolute; top: 14px; left: 18px; font-size: 58px; font-weight: 700; color: rgba(0,0,0,0.28); line-height: 1; font-style: italic; }
+.course-thumb .badge { position: absolute; top: 16px; right: 16px; }
+.course-body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.course-body h3 { font-size: 19px; margin-bottom: 8px; letter-spacing: -0.01em; }
+.course-body p { color: var(--text-2); font-size: 13.5px; font-weight: 300; flex: 1; }
+.course-meta { display: flex; justify-content: space-between; align-items: baseline; margin-top: 18px; }
+.prix { font-size: 20px; font-weight: 700; }
+.prix .old { font-size: 14px; font-weight: 400; color: var(--text-3); text-decoration: line-through; margin-left: 8px; }
+.duree { font-size: 12px; color: var(--text-3); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.step { padding: 28px; }
+.step .n { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 18px; }
+.step h3 { font-size: 17px; margin-bottom: 8px; }
+.step p { color: var(--text-2); font-size: 13.5px; font-weight: 300; }
+.stats-band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: center; padding: 52px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); border-radius: 0; }
+.testis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.testi-card { padding: 26px; }
+.testi-card .q { font-size: 15.5px; font-weight: 500; font-style: italic; line-height: 1.55; margin-bottom: 22px; }
+.testi-card .who { display: flex; align-items: center; gap: 12px; }
+.testi-card .who .av { width: 42px; height: 42px; border-radius: 50%; background: var(--bg-3); display: flex; align-items: center; justify-content: center; font-weight: 600; color: var(--accent); }
+.testi-card .who .nm { font-size: 13.5px; font-weight: 600; }
+.testi-card .who .rl { font-size: 12px; color: var(--text-3); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: var(--font); font-size: 16.5px; font-weight: 500; text-align: left; padding: 22px 4px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-q .chev { transition: transform 0.25s ease; color: var(--text-3); }
+.faq-item.open .chev { transform: rotate(180deg); color: var(--accent); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-2); font-size: 14.5px; font-weight: 300; }
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a .inner { padding: 0 4px 22px; max-width: 660px; }
+.cta-final { text-align: center; padding: 120px 0; overflow: hidden; }
+.cta-final .orb-b { width: 480px; height: 480px; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.45; background: radial-gradient(circle, var(--accent-glow), transparent 70%); }
+footer { border-top: 1px solid var(--border); padding: 38px 0; color: var(--text-3); font-size: 13px; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+.lead-form { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+.lead-form .note { font-size: 12px; color: var(--text-3); }
+.pack-card { border-color: rgba(212,168,67,0.35); position: relative; }
+.pack-card::before { content: "MEILLEURE VALEUR"; position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #000; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 14px; border-radius: 999px; }
+.brief-banner { display: flex; gap: 12px; align-items: center; margin-top: 30px; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid rgba(45,226,142,0.3); background: var(--accent-soft); font-size: 13.5px; }
+@media (max-width: 900px) { .courses-grid, .steps, .testis { grid-template-columns: 1fr; } .stats-band { grid-template-columns: 1fr; gap: 34px; } .hero { min-height: 78vh; } }
+</style>
+</head>
+<body>
+<nav class="nav-pill">
+  <a href="/" style="font-weight:600; color:var(--text)">🌿 Bien-Être LMS</a>
+  <a href="#formations">Formations</a>
+  <a href="#methode">Méthode</a>
+  <a href="#temoignages">Témoignages</a>
+  <a href="#faq">FAQ</a>
+  <a href="/login" class="btn btn-white btn-sm" style="margin-left:6px">Commencer</a>
+</nav>
+
+<section class="hero">
+  <div class="orb hero-orb orb-1"></div>
+  <div class="orb hero-orb orb-2"></div>
+  <div class="orb hero-orb orb-3"></div>
+  <div class="wrap" style="position:relative; z-index:1">
+    <div class="eyebrow">🌿 Ressources d'accompagnement praticiens</div>
+    <h1 class="titre-hero">Ton agenda <span class="accent-i">se remplit</span>, ton cabinet vit</h1>
+    <p class="sous-hero">Les parcours guidés du programme d'accompagnement : offre claire, tarifs justifiés, agenda rempli, système automatisé — leçons courtes, actions concrètes de 15 minutes et ton coach qui répond sous chaque leçon.</p>
+    <div class="hero-ctas">
+      <a href="#formations" class="btn btn-accent btn-lg">Découvrir les formations</a>
+      <button class="btn btn-ghost btn-lg" id="lead-open">Être rappelé·e</button>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-avatars"><div class="av">🌿</div><div class="av">R</div><div class="av">P</div></div>
+      <div><strong style="color:var(--text); font-weight:600">Réservé aux praticiens accompagnés</strong> — accès via ton coach</div>
+    </div>
+    <div class="brief-banner hidden" id="brief-banner">
+      <span>💡</span><span id="brief-text"></span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-inner">
+    <span>Offre claire</span><span>Tarifs justifiés</span><span>Premiers témoignages</span><span>Page de réservation</span><span>Relances utiles</span><span>Ateliers qui remplissent</span><span>Tableau de bord</span><span>Automatisations</span>
+    <span>Offre claire</span><span>Tarifs justifiés</span><span>Premiers témoignages</span><span>Page de réservation</span><span>Relances utiles</span><span>Ateliers qui remplissent</span><span>Tableau de bord</span><span>Automatisations</span>
+  </div>
+</div>
+
+<section id="formations">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">CATALOGUE</div>
+      <h2 class="sec-titre">Nos formations</h2>
+      <p class="sous-hero" style="margin-top:14px">Trois parcours progressifs : les bases vendables, l'agenda rempli en continu, puis le système complet — accès via le code remis à ton accompagnement.</p>
+    </div>
+    <div class="courses-grid" id="courses-grid">
+      <p class="dimmer" id="courses-loading">Chargement du catalogue…</p>
+    </div>
+    <p class="mt-3 dimmer" style="font-size:13px">🔒 Accès par code premium : après achat, vous recevez un code personnel qui débloque votre formation dans l'espace élève.</p>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">MÉTHODE</div>
+      <h2 class="sec-titre">Comment ça marche</h2>
+    </div>
+    <div class="steps">
+      <div class="card card-hover step">
+        <div class="n">1</div>
+        <h3>Suis ton parcours</h3>
+        <p>3 parcours progressifs : le Kit de démarrage, Remplir son agenda, puis le Système complet — avec le pack tout-en-un à ta marque.</p>
+      </div>
+      <div class="card card-hover step">
+        <div class="n">2</div>
+        <h3>Active ton accès</h3>
+        <p>Inscription en 30 secondes, puis le code remis par ton coach débloque ton parcours (ou le pack complet).</p>
+      </div>
+      <div class="card card-hover step">
+        <div class="n">3</div>
+        <h3>Avance avec ton coach</h3>
+        <p>Leçons guidées + actions concrètes, quiz expliqués, ton coach te répond sous chaque leçon — attestations d'assiduité et certificat à la clé.</p>
+      </div>
+    </div>
+    <div class="stats-band mt-5">
+      <div><div class="stat-giant">15<span class="unit">min</span></div><p class="muted mt-1">d'action par leçon — zéro théorie inutile</p></div>
+      <div><div class="stat-giant">3</div><p class="muted mt-1">parcours progressifs + pack complet</p></div>
+      <div><div class="stat-giant">1<span class="unit">coach</span></div><p class="muted mt-1">qui te répond sous chaque leçon</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="temoignages">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">TÉMOIGNAGES</div>
+      <h2 class="sec-titre">Elles et ils ont franchi le pas</h2>
+    </div>
+    <div class="testis">
+      <div class="card testi-card">
+        <p class="q">« Après le Kit, ma phrase d'offre est enfin claire — j'ai osé augmenter mes tarifs et je les assume devant mes clients. »</p>
+        <div class="who"><div class="av">S</div><div><div class="nm">Sophie M.</div><div class="rl">Sophrologue — Kit de démarrage</div></div></div>
+      </div>
+      <div class="card testi-card">
+        <p class="q">« Ma page de réservation est en ligne depuis la semaine 2 : trois nouveaux clients réservés sans que je relance à la main. »</p>
+        <div class="who"><div class="av">K</div><div><div class="nm">Karim T.</div><div class="rl">Thérapeute — Remplir son agenda</div></div></div>
+      </div>
+      <div class="card testi-card">
+        <p class="q">« Mon rituel hebdo de 10 minutes a changé tout le reste : je voie mon CA et mon remplissage sans angoisser chaque fin de mois. »</p>
+        <div class="who"><div class="av">L</div><div><div class="nm">Léa B.</div><div class="rl">Naturopathe — Système complet</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="sec-titre">Questions fréquentes</h2>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">C'est quoi, exactement, ces parcours ? <span class="chev">⌄</span></button>
+      <div class="faq-a"><div class="inner">Les ressources en ligne du programme d'accompagnement : des leçons courtes avec une ACTION de 15 minutes à la fin — et ton coach humain qui répond sous chaque leçon. On ne « regarde » pas les leçons, on les applique.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Combien de temps par semaine ? <span class="chev">⌄</span></button>
+      <div class="faq-a"><div class="inner">Compte 30 à 45 min par leçon (lecture + action). Le Kit se fait en une semaine, les parcours suivants à ton rythme — l'accès reste ouvert après l'accompagnement.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Attestation et certificat ? <span class="chev">⌄</span></button>
+      <div class="faq-a"><div class="inner">Deux documents : une attestation d'assiduité dès 80 % de complétion (délivrée par ton coach) et un certificat de réussite à 100 % + quiz réussis — chacun avec un numéro de série unique, imprimable en PDF.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Le contenu se libère-t-il progressivement ? <span class="chev">⌄</span></button>
+      <div class="faq-a"><div class="inner">Oui — un module peut se débloquer « J+n leçons finies » ou à une date précise (lancement d'atelier par exemple). Ton coach règle le rythme selon ton accompagnement.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="orb orb-b"></div>
+  <div class="wrap" style="position:relative; z-index:1">
+    <div class="eyebrow">🌿 ON COMMENCE ?</div>
+    <h2 class="sec-titre">Ton système commercial t'attend — avance avec ton coach</h2>
+    <div class="hero-ctas" style="justify-content:center">
+      <a href="#formations" class="btn btn-accent btn-lg">Voir les formations</a>
+      <button class="btn btn-ghost btn-lg lead-open-2">Être rappelé·e</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="row"><span style="font-weight:600; color:var(--text)">🌿 Bien-Être LMS</span><span class="dimmer">— Ressources d'accompagnement</span></div>
+    <div>LMS Bien-Être © 2026 — Un produit CDB HUB</div>
+  </div>
+</footer>
+
+<div class="modal-root" id="lead-modal">
+  <div class="modal-backdrop" data-close-lead></div>
+  <div class="modal">
+    <h3>Te faire rappeler</h3>
+    <p class="muted" style="font-size:14px; margin-bottom:6px">Laisse ton email + ton objectif : l'école te recontacte avec un code de bienvenue.</p>
+    <div class="lead-form">
+      <div><span class="label">Prénom ou nom</span><input class="input" id="lead-name" placeholder="Ton prénom"></div>
+      <div><span class="label">Email</span><input class="input" id="lead-email" type="email" placeholder="toi@email.com"></div>
+      <div><span class="label">Ton objectif</span><textarea class="input" id="lead-goal" rows="3" placeholder="Ex : remplir mon agenda de février sans épuiser mes soirées…"></textarea></div>
+      <button class="btn btn-accent" id="lead-submit">Recevoir le rappel</button>
+      <p class="note">Achat par code premium — aucun paiement en ligne en V1. Tes données servent uniquement au rappel, jamais revendues.</p>
+    </div>
+  </div>
+</div>
+
+<div class="toast-root" id="toast-root"></div>
+
+<script type="application/json" id="data">{{DATA}}</script>
+<script src="/static/landing.js?v=2.0"></script>
+</body>
+</html>

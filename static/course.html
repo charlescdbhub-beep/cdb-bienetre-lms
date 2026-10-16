@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr" data-accent="emerald">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMS Bien-Être — Formation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<style>
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.co-hero { position: relative; padding: 140px 0 70px; overflow: hidden; }
+.co-hero .orb-1 { width: 480px; height: 480px; top: -140px; right: -100px; background: radial-gradient(circle at 35% 35%, var(--accent-glow), transparent 70%); }
+.co-grid { display: grid; grid-template-columns: 1fr 340px; gap: 30px; align-items: start; }
+.co-main h1 { font-size: clamp(32px, 4.5vw, 50px); letter-spacing: -0.03em; line-height: 1.1; }
+.co-main .sous { font-size: 17px; color: var(--text-2); font-weight: 300; margin-top: 16px; }
+.desc { color: rgba(255,255,255,0.85); font-size: 15px; line-height: 1.8; margin-top: 30px; }
+.desc h2, .desc h3 { margin: 22px 0 10px; }
+.desc p { margin-bottom: 12px; }
+.mod-card { padding: 0; margin-bottom: 14px; overflow: hidden; }
+.mod-head2 { width: 100%; display: flex; align-items: center; gap: 12px; padding: 18px 22px; cursor: pointer; background: none; border: none; color: var(--text); font-family: var(--font); text-align: left; }
+.mod-head2 .chev { margin-left: auto; color: var(--text-3); transition: transform .25s; }
+.mod-card.open .chev { transform: rotate(180deg); color: var(--accent); }
+.mod-lessons { display: none; padding: 0 22px 18px; }
+.mod-card.open .mod-lessons { display: block; }
+.lsn { display: flex; gap: 10px; align-items: center; padding: 8px 0; color: var(--text-2); font-size: 14px; border-top: 1px solid rgba(30,30,30,0.6); }
+.lsn:first-child { border-top: 0; }
+.lsn .tag { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; background: rgba(45,226,142,0.12); color: var(--accent); }
+.side-card { position: sticky; top: 96px; }
+.side-card .px { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+.side-card .old { color: var(--text-3); text-decoration: line-through; font-size: 16px; margin-left: 10px; font-weight: 400; }
+.side-card ul { list-style: none; margin: 18px 0; }
+.side-card li { display: flex; gap: 9px; align-items: center; color: var(--text-2); font-size: 13.5px; padding: 5px 0; font-weight: 300; }
+.side-card li::before { content: "✓"; color: var(--accent); font-weight: 700; }
+footer.co-foot { border-top: 1px solid var(--border); padding: 30px 0; color: var(--text-3); font-size: 13px; }
+@media (max-width: 900px) { .co-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav class="nav-pill">
+  <a href="/" style="font-weight:600; color:var(--text)">🌿 Bien-Être LMS</a>
+  <a href="/#formations">Formations</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/login" class="btn btn-white btn-sm" style="margin-left:6px">Commencer</a>
+</nav>
+
+<section class="co-hero">
+  <div class="orb orb-1"></div>
+  <div class="wrap" style="position:relative; z-index:1">
+    <div class="eyebrow" id="crumb">✦ Formation</div>
+    <div class="co-grid">
+      <div class="co-main">
+        <h1 id="co-title">…</h1>
+        <p class="sous" id="co-sub"></p>
+        <div class="row mt-3" style="gap:8px; flex-wrap:wrap" id="co-tags"></div>
+        <div class="desc" id="co-desc"></div>
+      </div>
+      <div>
+        <div class="card card-glow side-card">
+          <div class="eyebrow">ACCÈS</div>
+          <div><span class="px" id="co-price">–</span><span class="old" id="co-old" hidden></span></div>
+          <ul id="co-points"></ul>
+          <a class="btn btn-accent" style="width:100%" href="/signup" id="co-cta">Créer mon compte élève</a>
+          <p class="center dimmer mt-2" style="font-size:12px">Accès par code premium, remis après achat.<br>Déjà inscrite ? <a href="/login" style="color:var(--accent)">connecte-toi</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow">PROGRAMME COMPLET</div>
+    <h2 style="font-size:32px; margin-bottom:30px">Ce que tu vas apprendre</h2>
+    <div id="co-modules"></div>
+  </div>
+</section>
+
+<footer class="co-foot">
+  <div class="wrap"><div class="row" style="justify-content:space-between"><span>🌿 Bien-Être LMS</span><span>Un produit CDB HUB</span></div></div>
+</footer>
+
+<div class="toast-root" id="toast-root"></div>
+<script type="application/json" id="data">{{DATA}}</script>
+<script src="/static/course.js?v=2.0"></script>
+</body>
+</html>

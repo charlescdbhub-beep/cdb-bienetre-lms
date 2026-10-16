@@ -1,0 +1,58 @@
+[
+  {
+    "file": "STRATÉGIE DE DÉCOMPOSITION DE LA FORMATION EN NUMÉROLOGIE.docx",
+    "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "id": "1HlzquaHwCXEifoTysNVb5HJcoX1C5_Jw"
+  },
+  {
+    "file": "Cours Numérologie RMB.docx",
+    "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "id": "1ZyTlYkkUDDWkZHfXCuDg_fjKNqydnZiN"
+  },
+  {
+    "folder": "MODULE 1",
+    "id": "1frRPuR8zhd_LVaMZ_Wsk3xJGBkHuM-F7",
+    "children": [
+      {
+        "file": "SOMMAIRE TABLE D'INCLUSION.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "id": "1f9DYGTAToEhfZcY8SDJb74q2u9CjbaQL"
+      },
+      {
+        "file": "SOMMAIRE  EXPRESSION LETTRE.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "id": "1SmPb9bFIVT_dSH0jpmkP7_M_EpU2xo52"
+      },
+      {
+        "file": "SOMMAIRE NOM ET PRENOM PART 1.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "id": "1CwdOXhWcUuZGB3cqVIM586qNsYGmWY3n"
+      }
+    ],
+    "n_files": 3
+  },
+  {
+    "folder": "MODULE 2",
+    "id": "1Zs07HPOQu_Gd4YpvdhJRIjuOy9IXv4oK",
+    "children": [
+      {
+        "file": "SOMMAIRE CHEMIN DE VIE.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "id": "1t6ULu4KTWNoL0hBmyR7xPoGGYsp9noc9"
+      }
+    ],
+    "n_files": 1
+  },
+  {
+    "folder": "MODULE 3",
+    "id": "1uB1UKvA0Txq85Hcguu_BWo2IY_F4h4on",
+    "children": [
+      {
+        "file": "SOMMAIRE ANNEE PERSONNELLE.docx",
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "id": "1TKAWjElpVmCoKy6Umin9b0iXHcM29ngI"
+      }
+    ],
+    "n_files": 1
+  }
+]
