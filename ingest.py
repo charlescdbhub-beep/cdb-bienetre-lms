@@ -1,3 +1,6 @@
+# ARCHIVÉ (16/10/2026) : cet ingest était dédié à la numérologie (fichiers Drive Rosemary).
+# Pour le LMS Bien-Être, les contenus seedés vivent dans seed_data.py (+ upload PDF/vidéo par l'admin).
+# Conservé pour la mécanique docx→leçons réutilisable (pattern Drive).
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """

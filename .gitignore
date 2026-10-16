@@ -1,6 +1,6 @@
 data/
 drive/
+static/assets/
+*.bak*
 __pycache__/
 *.pyc
-*.db
-.secrets/
